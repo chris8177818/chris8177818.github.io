@@ -1,163 +1,170 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<title>HTML 練習</title> 
-		<!--  <link rel=stylesheet type="text/css" href="css1.cs"> -->
-		<!-- internal style shteet-->
-		<style type="text/css"> 
-						html{
-			  background:url(DemoImage/bg-body-top.jpg) repeat-x;
-			}
-			body{
-			  margin: 0;
-			  background:url(DemoImage/bg-body-bottom.jpg) repeat-x left bottom;
-			}
-			#content-L{
-				float:left;
-			  width: 150px;  /*#content-L的寬度*/
-			  margin-right: 0px;
-			  padding-right: 0px;
-			  border-right: 0px;
-			  height: 910px;
-			  background: url(DemoImage/advertisement.jpg); /*路徑很奇怪@@*/
-			  }
 
-			#content-R{
-			  float: right;
-			  background: url(DemoImage/aurora.jpg); /*路徑很奇怪@@*/
-			  height: 460px;
-			  width: 780px;
-			  
-			  }
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>家慶的美食網</title>
+    <style type="text/css">
+    html {
+        width: 1400px;
+        height: 7000px;
+        background-color: #d8d0df;
+    }
+    
+    .Top {
+        width: 800px;
+        height: 150px;
+        margin-left: 290px;
+        background-image: url(image/bg-body-top.jpg);
+    }
+    
+    #img {
 
-			#content{
-			 
-			  height: 1500px;
-			  width: 960px;
-			  }
+        margin-left: 0px;
+    }
+    
+    #T1 {
+        position: relative;
+        top: -150px;
+        left: 220px;
+    }
+    
+    .Content {
+        /* 最大數值字為1 */
 
-			#footer{
-			  clear:both; /*清除浮動設定*/
-			  }
-			#header{
+        width: 800px;
+        margin-left: 290px;
+        height: 6960px;
+    }
+    
+    #tools {
 
-				
-			}
-			.b1{
-				
-			}
-			#tools{
-			background: url(DemoImage/bg-navigation.gif); /*路徑很奇怪@@*/
-			  width: 1000px;  
-			  height:40px;
-			}
-			#content-1{
-			margin-top: 460px;
-			width:780px;
-			height: 140px;
-			}
-			#contentR1-1{
-			  background: url(DemoImage/summer-collection.jpg); /*路徑很奇怪@@*/
-			  margin-top: 10px;
-			 float: left;
-			  width: 385px;
-			  height: 140px;
-			}
+        width: 800px;
+        height: 40px;
+        background-image: url(menu_bg.gif);
+        /*設定長條狀背景圖*/
+        margin-right: auto;
+        /*置中設定的語法*/
+        margin-left: auto;
+        /*置中設定的語法*/
+    }
+    
+    ul {
+        list-style-type: none;
+        /*將條例項目左邊的黑點取消*/
+        margin: 0;
+        padding-left: 0px;
+    }
+    
+    li {
+        float: left;
+        /*讓條例項目呈現水平排列*/
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 40px;
+    }
+    
+    li a {
+        display: block;
+        /*將超連結設定為區塊模式*/
+        width: 160px;
+        height: 40px;
+        background-image: url(image/menu_up.gif);
+        /*設定超連結區塊的背景圖片*/
+        text-decoration: none;
+        /*將超連結的底線去除*/
+        color: #000000;
+        text-align: center;
+    }
+    
+    li a:hover {
+        background-image: url(image/menu_ov.gif);
+        /*設定滑鼠摸到超連結時會改變背景圖片*/
+        color: #006699;
+        /*設定滑鼠摸到超連結時文字的顏色也改變*/
+    }
+    
+    h1 {
+        color: red;
+    }
+    .foot {
+        width: 800px;
+        height: 100px;
+        margin-left: 260px;
+        font-weight: bolder;
+        margin-top: 10px;
+    }
+    </style>
+</head>
 
-			#contentR1-2{
-			   background: url(DemoImage/fashionable.jpg); /*路徑很奇怪@@*/
-				 margin-top: 10px;
-			 float: right;
-			  width: 385px;
-			  height: 140px;
-			}
+<body>
+    <div class="Top">
+        <div id="img">
+            <img src="image/Eat.png" width="200" height="150">
+        </div>
+        <div id="T1">
+            <h1>美　食　網</h1>
+        </div>
+    </div>
+    <div id="tools">
+        <ul>
+            <li><a href="Resume.html" title="resume">關於我</a></li>
+            <li><a href="#" title="Dreamweaver">美食介紹</a></li>
+            <li><a href="pratice.html" title="pratice">範例練習</a></li>
+            <li><a href="http://hunterli0120.github.io/" title="link1">友站連結一</a></li>
+            <li><a href="#" title="link2">友站連結二</a></li>
+        </ul>
+    </div>
+    </div>
+    <!-- 分隔線-->
+    <div class="Content">
+        <h1>【榕堤水灣餐廳】淡水 ❤ 峇里島浪漫風情。不算便宜的異國料理提供。</h1>
+        <image src="image/1.jpg" width="800">
+        <p style="color:green;text-align:center">一號出口出來沿著淡水老街一直走~大約10分多鐘，就可看到目的地...</p>
+        <image src="image/3.jpg" width="800">
+        <p style="color:green;text-align:center">碩大的茅草屋、精製籐編座位，濃濃的峇里島風情展露無疑。</p>
+        <p style="color:green;text-align:center">因此即使是平日仍然高朋滿座的榕堤水灣餐廳每到假日更是一位難求，</p>
+        <p style="color:green;text-align:center">建議想要前往榕堤水灣餐廳用餐的旅人們一定要事先訂位才能省去漫長的等待時間！ </p>
+        <p style="color:green;text-align:center">占地狹長的榕堤水灣餐廳分為室內座位與室外座位區，</p>
+        <p style="color:green;text-align:center">如果是室外座位區只要向旁邊望去就是淡水近距離無敵海景！</p>
+        <image src="image/4.jpg" width="800">
+        <p style="color:green;text-align:center">榕堤水灣餐廳晚餐時段只有提供套餐， 每份套餐除了主餐外都包含了前菜、麵包、濃湯、飲料和甜點。</p>
+        <image src="image/5.jpg" width="800">
+        <h3 style="color:red;text-align:center">前餐：海鮮曼波</h3>
+        <p style="color:green;text-align:center">上半部是蟹肉棒與蝦卵的組合，下方則搭配了清新爽口的小黃瓜與鳳梨，</p>
+        <p style="color:green;text-align:center">最後灑上許多香菜提味，嚐起來還帶了點淡淡檸檬清香的口感</p>
+        <image src="image/6.jpg" width="800">
+        <h3 style="color:red;text-align:center">濃湯：蘑菇濃湯</h3>
+        <p style="color:green;text-align:center">香純又濃稠的口感，還喝得到濃濃的磨菇香氣呢！</p>
+        <h3 style="color:red;text-align:center">麵包</h3>
+        <p style="color:green;text-align:center">甜葡萄麵包佐塔塔醬 烤得香氣四溢、外層酥脆內餡紮實的麵包一上桌就令人食指大動啦！</p>
+        <p style="color:green;text-align:center">沾著塔塔醬一同入口風味更佳</p>
+        <image src="image/7.jpg">
+        <h3 style="color:red;text-align:center">主餐：爐烤穀物飼養牛排舞波特紅酒沙司　　　ＮＴ. 750 </h3>
+        <p style="color:green;text-align:center">榕堤水灣餐廳嚴選美國油花分布均勻的霜降牛排， 以熱火香煎再烤至香氣四溢、</p>
+        <p style="color:green;text-align:center">紅潤軟嫩的七分熟， 看著那層次分明、如大理石般細致分佈的紋路， </p>
+        <p style="color:green;text-align:center">搭配紅酒沙司一口咬下不但肉質細嫩，還有那溫潤多汁、層次豐富的絕美滋味！ </p>
+        <p style="color:green;text-align:center">牛排上面灑滿了金黃酥脆的蒜片，一同入口更是讓人不能自己阿～</p> 
+        <p style="color:green;text-align:center">另外，特別值得一提的是：榕堤的餐點份量比起一般景觀餐廳真的比較飽足呢！</p>
+        <image src="image/8.jpg">
+        <h3 style="color:red;text-align:center">飲品：阿薩姆舞芒果冰茶、香草萊姆小紫蘇冰茶 </h3>
+        <p style="color:green;text-align:center">比較推薦榕堤水灣餐廳的芒果冰茶～ 在炎熱的夏天來杯芒果冰茶真是太享受啦！</p>
+        <image src="image/9.jpg">
+        <p style="color:green;text-align:center">運氣好還有遇到歌手駐唱時間， 清甜柔美的嗓音融化了每個旅人的心～</p>
+        <p style="color:green;text-align:center">有別於一般景觀餐廳都會有兩小時用餐時間的限制， 榕堤水灣餐廳不限制旅人們的用餐時間喔 </p>
+        <p style="color:green;text-align:center">這樣即使用完餐後還可以一邊聽著清柔浪漫的現場演唱，</p>
+        <p style="color:green;text-align:center">一邊在榕堤水灣餐廳的發呆亭相依偎著觀海賞夜，真是好不浪漫！ </p>
+        <p style="color:green;text-align:center">別再遲疑了！趕快帶著親愛的另一半到榕堤水灣餐廳浪漫一整個夏夜吧！</p>
+            <div class="line">
+        <HR color="#808080" size="10">
+    </div>
+    </div>
+    <div class="foot">
+        <h3 style="color:blue;text-align:center">〔 榕堤水灣餐廳 淡水 〕</h3> 
+        <p style="color:blue;text-align:center">地址：新北市淡水區中正路 229 - 9 號 </p>
+        <p style="color:blue;text-align:center">訂位專線：（02） 2629 - 6464</p>
+    </div>
+</body>
 
-			#content-2{
-			width:780px;
-			height: 140px;
-			}
-
-			#contentR2-1{
-			  background: url(DemoImage/beach-bride.jpg); /*路徑很奇怪@@*/
-			  margin-top: 10px;
-			 float: left;
-			  width: 385px;
-			  height: 140px;
-			}
-
-			#contentR2-2{
-			   background: url(DemoImage/accessories.jpg); /*路徑很奇怪@@*/
-				 margin-top: 10px;
-			 float: right;
-			  width: 385px;
-			  height: 140px;
-			}
-
-			#content-3{
-			width:780px;
-			height: 140px;
-			}
-
-			#contentR3-1{
-			  background: url(DemoImage/motherhood-apparel.jpg); /*路徑很奇怪@@*/
-			  margin-top: 10px;
-			 float: left;
-			  width: 385px;
-			  height: 140px;
-			}
-
-			#contentR3-2{
-			   background: url(DemoImage/skin-perfect.jpg); /*路徑很奇怪@@*/
-				 margin-top: 10px;
-			 float: right;
-			  width: 385px;
-			  height: 140px;
-			}
-
-			#content-4{
-			width:780px;
-			height: 300px;
-			}
-			
-			#T-txt{
-			font-size:28;
-			margin-left:50px
-			}
-		</style>
-	
-	</head>
-	<body class= "B1">
-		<div id="header">
-			<img src="DemoImage\logo.gif" height="100" width="300">
-		</div>
-		<div id="tools">
-		<a href="T1.html" id ="T-txt">連結測試</a>
-		</div>
-  				<div id="content">
-    				<div id="content-L">
-    				</div>
-    				<div id="content-R">
-    					<div id="content-1">
-    						<div id="contentR1-1"></div>
-    						<div id="contentR1-2"></div>
-    					</div>
-    					<div id="content-2">
-    						<div id="contentR2-1"></div>
-    						<div id="contentR2-2"></div>
-    					</div>
-    					<div id="content-3">
-    						<div id="contentR3-1"></div>
-    						<div id="contentR3-2"></div>
-    					</div>
-    					<div id="content-4">
-    						<div id="contentR4-1">
-    						   <p style="Color:Red;font-size:28">Please Read</p>		
-    						</div>
-    						<div id="contentR4-2"></div>
-    					</div>
-    				</div>
-
-  				</div>
-		
-	</body>
 </html>
