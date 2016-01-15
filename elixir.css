@@ -1,0 +1,22 @@
+ div>h1{
+            color: black;
+            font-size: 120px;
+        }
+        div>h2{
+            color: green;
+            font-size: 40px;
+        }
+        p{
+            color:red;
+        }
+        li>p{
+            font-size: 90px;
+        }
+        div~h3{
+            font-size: 20px;
+            color: blue;
+        }
+
+        div+h3{
+            font-size: 40px;
+        }
