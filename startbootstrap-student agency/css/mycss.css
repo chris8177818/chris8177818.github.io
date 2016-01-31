@@ -1,0 +1,56 @@
+.tool{
+	height: 100px;
+}
+#jumbo {
+    position: relative;
+    opacity: 0.9;
+    height: 600px;
+    text-align: center;
+}
+
+#jumbo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+}
+
+#jumbo h3{
+	padding-top:100px; 
+	color: white;
+	font-size: 24px;
+}
+
+#jumbo h1{
+	padding-top: 5px;
+	color: white;
+	font-size: 62px;
+}
+
+#jumbo button a {
+	color: white;
+}
+.container {
+	height: 600px;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.title{
+	padding-top:150px; 
+
+}
+.Service{
+	margin-top: 20px;
+}
+.con{
+	text-align: center;
+	padding: 60px;
+}
+.fa-stack p{
+	margin-top: 100px;
+	width: 200px;
+
+}
