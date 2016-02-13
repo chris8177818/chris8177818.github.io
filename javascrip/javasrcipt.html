@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>家慶Html學習網</title>
+    <script type="text/javascript">
+    //亂數
+    var maxNum = 9;
+    var minNum = 1;
+    var result = "";
+    var error = 0;
+    var games = 0;
+    var end = false;
+    var a = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+    var b = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+    var c = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+    var d = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+
+
+    function fun2() {
+
+        var t1 = document.getElementById('txt1').value;
+        var t2 = document.getElementById('txt2').value;
+        var t3 = document.getElementById('txt3').value;
+        var t4 = document.getElementById('txt4').value;
+
+        var Y = 0;
+        var N = 0;
+        var source = new Array(t1, t2, t3, t4);
+        var answer = new Array(a, b, c, d);
+
+        if (end == true) {
+            alert("答對後請點選重玩，重新進行遊戲");
+        } else {
+            if (t1 == "" || t2 == "" || t3 == "" || t4 == "") {
+                alert("請輸入1~9的數字後，再點選確定鍵");
+            } else {
+                if (error < 5) {
+                    for (i = 0; i < source.length; i++) {
+                        //先判斷不等於自己本身，但等於其他欄位
+                        if ((source[i] != answer[i]) && (source[i] == a || source[i] == b || source[i] == c || source[i] == d)) {
+                            N = N + 1;
+
+                        } else if (i == 0 && source[i] == a) {
+                            Y = Y + 1;
+                        } else if (i == 1 && source[i] == b) {
+                            Y = Y + 1;
+                        } else if (i == 2 && source[i] == c) {
+                            Y = Y + 1;
+                        } else if (i == 3 && source[i] == d) {
+                            Y = Y + 1;
+                        }
+                    }
+                    if (Y == 4) {
+                        document.getElementById("txt5").readonly = "readonly";
+                        document.getElementById("txt6").readonly = "readonly";
+                        document.getElementById("txt7").readonly = "readonly";
+                        document.getElementById("txt8").readonly = "readonly";
+                        document.getElementById("txt9").readonly = "readonly";
+                        end = true;
+                        alert("恭喜答對齁，請點選重玩，重新進行遊戲");
+                    } else {
+                        error = error + 1;
+                    }
+
+
+                    result = Y + "A" + N + "B";
+
+                    //結果顯示   
+                    games = games + 1;
+                    var tx = "txt" + (games + 4);
+                    document.getElementById(tx).value = result;
+
+                    //紀錄顯示
+                    var tx1 = "txt" + (games + 9);
+                    document.getElementById(tx1).value = t1+t2+t3+t4;                    
+
+
+                } else {
+                    alert("錯誤已達五次請重新進行");
+                }
+            }
+        }
+    }
+
+    function reset() {
+        //要清除所有變數，和欄位的值
+        maxNum = 9;
+        minNum = 1;
+        result = "";
+        error = 0;
+        games = 0;
+        a = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+        b = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+        c = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+        d = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+        document.getElementById("txt5").value = "";
+        document.getElementById("txt6").value = "";
+        document.getElementById("txt7").value = "";
+        document.getElementById("txt8").value = "";
+        document.getElementById("txt9").value = "";
+        alert("已完成請重新猜謎");
+    }
+    </script>
+    <style type="text/css">
+    .Top {
+        height: 100px;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 42px;
+    }
+    
+    .content {
+        height: 300px;
+        width: 500px;
+        margin-left: 400px;
+        margin-top: 20px;
+        
+    }
+    .left{
+        float: left;
+        width: 230px;
+    }
+    .right{
+        float: left;
+         width: 230px;
+    }
+    
+    input#txt1 {
+        width: 100px;
+        height: 50px;
+        margin-left: 400px;
+        font-size: 24px;
+    }
+    
+    input#txt2 {
+        width: 100px;
+        height: 50px;
+        margin-left: 20px;
+        font-size: 24px;
+    }
+    
+    input#txt3 {
+        width: 100px;
+        height: 50px;
+        margin-left: 20px;
+        font-size: 24px;
+    }
+    
+    input#txt4 {
+        width: 100px;
+        height: 50px;
+        margin-left: 20px;
+        font-size: 24px;
+    }
+    
+    input#txt5 {
+        width: 100px;
+        height: 50px;
+        margin-left: 20px;
+        font-size: 24px;
+    }
+    
+    input#txt6 {
+        width: 100px;
+        height: 50px;
+        margin-left: 20px;
+        font-size: 24px;
+    }
+    
+    input#txt7 {
+        width: 100px;
+        height: 50px;
+        margin-left: 20px;
+        font-size: 24px;
+    }
+    
+    input#txt8 {
+        width: 100px;
+        height: 50px;
+        margin-left: 20px;
+        font-size: 24px;
+    }
+    
+    input#txt9 {
+        width: 100px;
+        height: 50px;
+        margin-left: 20px;
+        font-size: 24px;
+    }
+       input#txt10 {
+        width: 100px;
+        height: 50px;
+        margin-left: 20px;
+        font-size: 24px;
+    }
+       input#txt11 {
+        width: 100px;
+        height: 50px;
+        margin-left: 20px;
+        font-size: 24px;
+    }
+       input#txt12 {
+        width: 100px;
+        height: 50px;
+        margin-left: 20px;
+        font-size: 24px;
+    }
+       input#txt13 {
+        width: 100px;
+        height: 50px;
+        margin-left: 20px;
+        font-size: 24px;
+    }
+       input#txt14 {
+        width: 100px;
+        height: 50px;
+        margin-left: 20px;
+        font-size: 24px;
+    }
+    
+    input#botton1 {
+        margin-left: 5px;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+    }
+    
+    input#botton2 {
+        margin-left: 5px;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+    }
+    </style>
+    <!--<link rel="stylesheet" type="text/css" href="Css/reset_css.css"> 清除html預設的樣式 -->
+</head>
+
+<body>
+    <div class="Top">
+        <h1>猜謎遊戲</h1>
+    </div>
+    <div class="Content">
+        <INPUT id="txt1" TYPE="text" NAME="" maxlength=1>
+        <INPUT id="txt2" TYPE="text" NAME="" maxlength=1>
+        <INPUT id="txt3" TYPE="text" NAME="" maxlength=1>
+        <INPUT id="txt4" TYPE="text" NAME="" maxlength=1>
+        <INPUT id="botton1" TYPE="button" VALUE="確定" ONCLICK="fun2()">
+        <INPUT id="botton2" TYPE="button" VALUE="重玩" ONCLICK="reset()">
+    </div>
+    <div class="content">
+        <p>結果列</p>
+        <div class="left">
+            <p>第一次結果:
+                <INPUT id="txt5" TYPE="text" NAME="" value="" readonly="readonly"> </p>
+            <p>第二次結果:
+                <INPUT id="txt6" TYPE="text" NAME="" value="" readonly="readonly"> </p>
+            <p>第三次結果:
+                <INPUT id="txt7" TYPE="text" NAME="" value="" readonly="readonly"> </p>
+            <p>第四次結果:
+                <INPUT id="txt8" TYPE="text" NAME="" value="" readonly="readonly"> </p>
+            <p>第五次結果:
+                <INPUT id="txt9" TYPE="text" NAME="" value="" readonly="readonly"> </p>
+        </div>
+        <div class="right">
+            <p>第一次紀錄:
+                <INPUT id="txt10" TYPE="text" NAME="" value="" readonly="readonly"> </p>
+            <p>第二次紀錄:
+                <INPUT id="txt11" TYPE="text" NAME="" value="" readonly="readonly"> </p>
+            <p>第三次紀錄:
+                <INPUT id="txt12" TYPE="text" NAME="" value="" readonly="readonly"> </p>
+            <p>第四次紀錄:
+                <INPUT id="txt13" TYPE="text" NAME="" value="" readonly="readonly"> </p>
+            <p>第五次紀錄:
+                <INPUT id="txt14" TYPE="text" NAME="" value="" readonly="readonly"> </p>
+        </div>
+    </div>
+</body>
+
+</html>
