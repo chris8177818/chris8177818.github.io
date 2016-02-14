@@ -12,10 +12,16 @@
     var error = 0;
     var games = 0;
     var end = false;
-    var a = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
-    var b = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
-    var c = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
-    var d = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+    var radomary = [];
+    radomary = getRandomArray(maxNum, minNum, 4);
+    var a = radomary[0];
+    var b = radomary[1];
+    var c = radomary[2];
+    var d = radomary[3];
+    //var a = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+    //var b = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+    //var c = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
+    //var d = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
 
 
     function fun2() {
@@ -70,12 +76,25 @@
                     //結果顯示   
                     games = games + 1;
                     var tx = "txt" + (games + 4);
-                    document.getElementById(tx).value = result;
+                    //document.getElementById(tx).value = result;
 
+                    //動態產生節點以及欄位
+                    var node1 = document.getElementById("L1");
+                    var node2 = document.createElement("p");
+                    node2.className = "pp";
+                    //a.innerHTML ="123";
+                    node2.innerHTML = games + ':<INPUT class="cir1" TYPE="text" NAME="" value=' + result + ' readonly="readonly">'
+                    node1.appendChild(node2);
                     //紀錄顯示
                     var tx1 = "txt" + (games + 9);
-                    document.getElementById(tx1).value = t1+t2+t3+t4;                    
+                    //document.getElementById(tx1).value = t1+t2+t3+t4;
 
+                    //動態產生節點以及欄位
+                    var node3 = document.getElementById("R1");
+                    var node4 = document.createElement("p");
+                    node4.className = "pp";
+                    node4.innerHTML = '<INPUT class="cir2" TYPE="text" NAME="" value=' + t1 + t2 + t3 + t4 + ' readonly="readonly">'
+                    node3.appendChild(node4);
 
                 } else {
                     alert("錯誤已達五次請重新進行");
@@ -91,70 +110,157 @@
         result = "";
         error = 0;
         games = 0;
-        a = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
-        b = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
-        c = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
-        d = Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
-        document.getElementById("txt5").value = "";
-        document.getElementById("txt6").value = "";
-        document.getElementById("txt7").value = "";
-        document.getElementById("txt8").value = "";
-        document.getElementById("txt9").value = "";
+        radomary = getRandomArray(maxNum, minNum, 4);
+        a = radomary[0];
+        b = radomary[1];
+        c = radomary[2];
+        d = radomary[3];
+
+        //利用迴圈刪除節點
+        var child = document.getElementsByClassName('pp');
+        var i = 1
+        while (i <= child.length) {
+            child[0].parentNode.removeChild(child[0]);
+
+        }
         alert("已完成請重新猜謎");
+    }
+
+    function getRandomArray(minNum, maxNum, n) { //隨機產生不重覆的n個數字
+        var rdmArray = [n]; //儲存產生的陣列
+
+        for (var i = 0; i < n; i++) {
+            var rdm = 0; //暫存的亂數
+
+            do {
+                var exist = false; //此亂數是否已存在
+                rdm = getRandom(minNum, maxNum); //取得亂數
+
+                //檢查亂數是否存在於陣列中，若存在則繼續回圈
+                if (rdmArray.indexOf(rdm) != -1) exist = true;
+
+            } while (exist); //產生沒出現過的亂數時離開迴圈
+
+            rdmArray[i] = rdm;
+        }
+        return rdmArray;
+    }
+
+    function getRandom(minNum, maxNum) { //取得 minNum(最小值) ~ maxNum(最大值) 之間的亂數
+        return Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
     }
     </script>
     <style type="text/css">
     .Top {
-        height: 100px;
+        height: 80px;
         text-align: center;
     }
     
     h1 {
         font-size: 42px;
+        z-index: -1;
     }
     
-    .content {
+    .Content {
+        height: 100px;
+        width: 500px;
+        margin-left: 450px;
+        margin-top: 10px;
+    }
+    
+    .guidline {
+        height: 40px;
+        width: 500px;
+        margin-left: 450px;
+        margin-top: 5px;
+        border-bottom: solid 2px;
+    }
+    
+    .gL1 {
+        float: left;
+        width: 100px;
+        font-size: 24px;
+        font-weight: bold;
+        line-height: 50px;
+    }
+    
+    .gR1 {
+        float: left;
+        margin-left: 10px;
+        width: 390px;
+        font-size: 16px;
+    }
+    
+    .content1 {
         height: 300px;
         width: 500px;
-        margin-left: 400px;
-        margin-top: 20px;
-        
+        margin-left: 450px;
+        margin-top: 0px;
     }
-    .left{
+    
+    .content1 >h2 {
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+    
+    .left {
         float: left;
         width: 230px;
     }
-    .right{
+    
+    .right {
         float: left;
-         width: 230px;
+        width: 230px;
     }
     
     input#txt1 {
-        width: 100px;
-        height: 50px;
-        margin-left: 400px;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        border-radius: 50%;
         font-size: 24px;
+        border: solid 2px green;
+        color: #9F88FF;
+    }
+    
+    input#txt1:hover,
+    input#txt2:hover,
+    input#txt3:hover,
+    input#txt4:hover {
+        border: solid 5px red;
     }
     
     input#txt2 {
-        width: 100px;
-        height: 50px;
-        margin-left: 20px;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        border-radius: 50%;
+        margin-left: 10px;
         font-size: 24px;
+        border: solid 2px green;
+        color: #9F88FF;
     }
     
     input#txt3 {
-        width: 100px;
-        height: 50px;
-        margin-left: 20px;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        border-radius: 50%;
+        margin-left: 10px;
         font-size: 24px;
+        border: solid 2px green;
+        color: #9F88FF;
     }
     
     input#txt4 {
-        width: 100px;
-        height: 50px;
-        margin-left: 20px;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        border-radius: 50%;
+        margin-left: 10px;
         font-size: 24px;
+        border: solid 2px green;
+        color: #9F88FF;
     }
     
     input#txt5 {
@@ -191,49 +297,61 @@
         margin-left: 20px;
         font-size: 24px;
     }
-       input#txt10 {
+    
+    input.cir1 {
         width: 100px;
         height: 50px;
-        margin-left: 20px;
+        margin-left: 100px;
         font-size: 24px;
+        border-radius: 50%;
+        text-align: center;
+        border: solid 2px green;
+        font-family: cursive;
+        font-weight: bolder;
     }
-       input#txt11 {
+    
+    input.cir2 {
         width: 100px;
         height: 50px;
-        margin-left: 20px;
+        margin-left: 50px;
         font-size: 24px;
-    }
-       input#txt12 {
-        width: 100px;
-        height: 50px;
-        margin-left: 20px;
-        font-size: 24px;
-    }
-       input#txt13 {
-        width: 100px;
-        height: 50px;
-        margin-left: 20px;
-        font-size: 24px;
-    }
-       input#txt14 {
-        width: 100px;
-        height: 50px;
-        margin-left: 20px;
-        font-size: 24px;
+        border-radius: 50%;
+        text-align: center;
+        border: solid 2px green;
+        font-family: cursive;
+        font-weight: bolder;
     }
     
     input#botton1 {
-        margin-left: 5px;
-        width: 50px;
-        height: 50px;
+        margin-left: 10px;
+        width: 70px;
+        height: 70px;
         border-radius: 5px;
+        font-size: 20px;
+        font-weight: bolder;
+        color: #3A0088;
+        background-color: #FFFFBB;
     }
     
     input#botton2 {
-        margin-left: 5px;
-        width: 50px;
-        height: 50px;
+        margin-left: 10px;
+        width: 70px;
+        height: 70px;
+        font-size: 20px;
         border-radius: 5px;
+        color: #3A0088;
+        background-color: #FFFFBB;
+        font-weight: bolder;
+    }
+    
+    input#botton2:hover,
+    input#botton1:hover {
+        background-color: #DDDDDD;
+        color: white;
+    }
+    
+    p {
+        font-size: 20px;
     }
     </style>
     <!--<link rel="stylesheet" type="text/css" href="Css/reset_css.css"> 清除html預設的樣式 -->
@@ -244,38 +362,22 @@
         <h1>猜謎遊戲</h1>
     </div>
     <div class="Content">
-        <INPUT id="txt1" TYPE="text" NAME="" maxlength=1>
-        <INPUT id="txt2" TYPE="text" NAME="" maxlength=1>
-        <INPUT id="txt3" TYPE="text" NAME="" maxlength=1>
-        <INPUT id="txt4" TYPE="text" NAME="" maxlength=1>
+        <INPUT class="cir" id="txt1" TYPE="text" NAME="" maxlength=1 pattern="[0-9]">
+        <INPUT class="cir" id="txt2" TYPE="text" NAME="" maxlength=1 pattern="[0-9]">
+        <INPUT class="cir" id="txt3" TYPE="text" NAME="" maxlength=1 pattern="[0-9]">
+        <INPUT class="cir" id="txt4" TYPE="text" NAME="" maxlength=1 pattern="[0-9]">
         <INPUT id="botton1" TYPE="button" VALUE="確定" ONCLICK="fun2()">
         <INPUT id="botton2" TYPE="button" VALUE="重玩" ONCLICK="reset()">
     </div>
-    <div class="content">
-        <p>結果列</p>
-        <div class="left">
-            <p>第一次結果:
-                <INPUT id="txt5" TYPE="text" NAME="" value="" readonly="readonly"> </p>
-            <p>第二次結果:
-                <INPUT id="txt6" TYPE="text" NAME="" value="" readonly="readonly"> </p>
-            <p>第三次結果:
-                <INPUT id="txt7" TYPE="text" NAME="" value="" readonly="readonly"> </p>
-            <p>第四次結果:
-                <INPUT id="txt8" TYPE="text" NAME="" value="" readonly="readonly"> </p>
-            <p>第五次結果:
-                <INPUT id="txt9" TYPE="text" NAME="" value="" readonly="readonly"> </p>
+    <div class="guidline">
+        <div class="gL1">遊戲說明</div>
+        <div class="gR1">遊戲次數最多五次，超過次數請點選重新，重新進行遊戲</div>
+    </div>
+    <div class="content1">
+        <h2>結果列</h2>
+        <div class="left" id="L1">
         </div>
-        <div class="right">
-            <p>第一次紀錄:
-                <INPUT id="txt10" TYPE="text" NAME="" value="" readonly="readonly"> </p>
-            <p>第二次紀錄:
-                <INPUT id="txt11" TYPE="text" NAME="" value="" readonly="readonly"> </p>
-            <p>第三次紀錄:
-                <INPUT id="txt12" TYPE="text" NAME="" value="" readonly="readonly"> </p>
-            <p>第四次紀錄:
-                <INPUT id="txt13" TYPE="text" NAME="" value="" readonly="readonly"> </p>
-            <p>第五次紀錄:
-                <INPUT id="txt14" TYPE="text" NAME="" value="" readonly="readonly"> </p>
+        <div class="right" id="R1">
         </div>
     </div>
 </body>
