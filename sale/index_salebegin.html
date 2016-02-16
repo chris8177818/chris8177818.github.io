@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Jump for Joy</title>
+    <link href="styles/my_style.css" rel="stylesheet">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>練習</title>
+</head>
+
+<body>
+    <div id="header">
+        <h2>Jump for Joy Sale</h2>
+    </div>
+    <div id="main">
+        <div class="guess_box"><img src="images/jump1.jpg" /></div>
+        <div class="guess_box"><img src="images/jump1.jpg" /></div>
+        <div class="guess_box"><img src="images/jump1.jpg" /></div>
+        <div class="guess_box"><img src="images/jump1.jpg" /></div>
+    </div>
+    <div id="Content"></div>
+    <script src="scripts/jquery-1.12.0.min.js"></script>
+    <script>
+    var games = 0
+    $(document).ready(function() {
+        $(".guess_box").click(function() {
+            $(".guess_box p").remove();
+            var my_num = Math.floor(Math.random() * (9 - 1 + 1)) + 1;
+            var discount = "<p> Your Discount is " + my_num + " %</p>";
+            $(this).append(discount);
+            $(".guess_box p").css({
+                "color": "purple",
+                "font-size": "16px",
+                "font-weight": "bolder",
+            });
+            $(this).unbind("click");
+        });
+        $("img").click(function() {
+            var src_num = Math.floor(Math.random() * (4 - 1 + 1)) + 1;
+            var src_value
+            switch (src_num) {
+                case 1:
+                    src_value =  "images/jump1.jpg" 
+                    break;
+                case 2:
+                    src_value =  "images/jump2.jpg" 
+                    break;
+                case 3:
+                    src_value =  "images/jump3.jpg" 
+                    break;
+                case 4:
+                    src_value =  "images/jump4.jpg"
+                    break;
+                default:
+                	 src_value =  "images/jump1.jpg"
+            }
+            $(this).attr("src", src_value);
+            $(this).unbind("click");
+        });
+
+    });
+    </script>
+</body>
+
+</html>
