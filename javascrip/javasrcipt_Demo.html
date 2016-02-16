@@ -75,25 +75,25 @@
                     //結果顯示   
                     games = games + 1;
                     var tx = "txt" + (games + 4);
-                    //document.getElementById(tx).value = result;
+                    document.getElementById(tx).value = result;
 
                     //動態產生節點以及欄位
-                    var node1 = document.getElementById("L1");
-                    var node2 = document.createElement("p");
-                    node2.className = "pp";
+                   // var node1 = document.getElementById("L1");
+                    //var node2 = document.createElement("p");
+                    //node2.className = "pp";
                     //a.innerHTML ="123";
-                    node2.innerHTML = games + ':<INPUT class="cir1" TYPE="text" NAME="" value=' + result + ' readonly="readonly">'
-                    node1.appendChild(node2);
+                   // node2.innerHTML = games + ':<INPUT class="cir1" TYPE="text" NAME="" value=' + result + ' readonly="readonly">'
+                    //node1.appendChild(node2);
                     //紀錄顯示
                     var tx1 = "txt" + (games + 9);
-                    //document.getElementById(tx1).value = t1+t2+t3+t4;
+                    document.getElementById(tx1).value = t1+t2+t3+t4;
 
                     //動態產生節點以及欄位
-                    var node3 = document.getElementById("R1");
-                    var node4 = document.createElement("p");
-                    node4.className = "pp";
-                    node4.innerHTML = '<INPUT class="cir2" TYPE="text" NAME="" value=' + t1 + t2 + t3 + t4 + ' readonly="readonly">'
-                    node3.appendChild(node4);
+                    //var node3 = document.getElementById("R1");
+                    //var node4 = document.createElement("p");
+                    //node4.className = "pp";
+                    //node4.innerHTML = '<INPUT class="cir2" TYPE="text" NAME="" value=' + t1 + t2 + t3 + t4 + ' readonly="readonly">'
+                    //node3.appendChild(node4);
 
                 } else {
                     alert("錯誤已達五次請重新進行");
@@ -390,8 +390,18 @@
     <div class="content1">
         <h2>結果列</h2>
         <div class="left" id="L1">
+        	<p>1.<INPUT class="cir1" id ="txt5" TYPE="text" NAME="" value='' readonly="readonly"></p>
+        	<p>2.<INPUT class="cir1" id ="txt6" TYPE="text" NAME="" value='' readonly="readonly"></p>
+        	<p>3.<INPUT class="cir1" id ="txt7" TYPE="text" NAME="" value='' readonly="readonly"></p>
+        	<p>4.<INPUT class="cir1" id ="txt8" TYPE="text" NAME="" value='' readonly="readonly"></p>
+        	<p>5.<INPUT class="cir1" id ="txt9" TYPE="text" NAME="" value='' readonly="readonly"></p>
         </div>
         <div class="right" id="R1">
+        	<INPUT class="cir2" id ="txt10" TYPE="text" NAME="" value='' readonly="readonly"></p>
+        	<INPUT class="cir2" id ="txt11" TYPE="text" NAME="" value='' readonly="readonly"></p>
+        	<INPUT class="cir2" id ="txt12" TYPE="text" NAME="" value='' readonly="readonly"></p>
+        	<INPUT class="cir2" id ="txt13" TYPE="text" NAME="" value='' readonly="readonly"></p>
+        	<INPUT class="cir2" id ="txt14" TYPE="text" NAME="" value='' readonly="readonly"></p>
         </div>
     </div>
 </body>

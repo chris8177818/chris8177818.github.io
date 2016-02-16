@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Furry Friends Campaign</title>
+    <link rel="stylesheet" type="text/css" href="styles/my_style.css">
+    <script src="scripts/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+    	 $("#move_up").click(function() {
+            $("#123").animate({
+                top: 100
+            }, 200);
+        }); //end move_up
+    });
+    </script>
+</head>
+
+<body>
+    <div id="clickMe">Show me the the Furry Friend of the Day</div>
+    <button id="move_up">往上移動</button>
+        <img id = "123" src="images/furry_friend.jpg">
+
+</body>
+
+</html>
